@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Here’s the updated **README** with the requested changes:
 
-## Getting Started
+---
 
-First, run the development server:
+# CRAZY CODER 🚀
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+![Demo of CRAZY CODER](public/opengraph-image.png)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Built with ❤️ using [Nebius](https://nebius.com/studio/inference?utm_medium=cpc&utm_source=crazyCoder&utm_campaign=Network_en_all_lgen_inference_cloud&utm_term=crazyCoder)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**CRAZY CODER** is the hottest new way to write code! With the power of open-source AI models and the simplicity of natural language, you can go from idea to implementation in seconds.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🌟 Key Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 🔥 **The Hottest Programming Language is English**
+Write your ideas, pseudo-code, or simple instructions in English, and let the AI do the rest. Forget syntax and debugging headaches—focus on what matters: your creativity.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### ⚡ **Code Fast Now**
+No need to learn complex languages or frameworks. Get your program up and running in seconds using powerful open-source AI models like **Qwen**, **Llama**, **Mixtral**, and more.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🌐 Leverage Open Source
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Powerful Models**: Utilize cutting-edge coding models like **Qwen-2.5-Coder-32B**, which rivals GPT-4 in performance.
+- **Open for All**: These models are available to everyone for rapid prototyping and development.
+
+---
+
+## 🎨 Experiment Freely
+Harness the power of the **Nebius AI Studio** to experiment with different models at **low cost**. Create, test, and refine your applications in a flexible environment.
+
+🔗 Learn more about Nebius AI Studio [here](https://nebius.com/studio/inference?utm_medium=cpc&utm_source=crazyCoder&utm_campaign=Network_en_all_lgen_inference_cloud&utm_term=crazyCoder).
+
+---
+
+## 💡 Want to Replicate This App?
+The **CRAZY CODER** project is open source!
+You can clone the repository and deploy it easily to **Vercel** or your favorite platform.
+
+### 🚀 View the Code on GitHub
+- [Clone the repository](#) and start building today!
+
+---
+
+### ✨ Build Your Next Big Idea with CRAZY CODER!
+With **Nebius** and cutting-edge open-source models, the possibilities are endless. Start coding smarter, faster, and more creatively than ever before.
+
+---
+
+Here’s the updated **README** with the **License** section added:
+
+---
+
+# CRAZY CODER 🚀
+
+![Demo of CRAZY CODER](public/demo.png)
+
+Built with ❤️ using [Nebius](https://nebius.com/studio/inference?utm_medium=cpc&utm_source=crazyCoder&utm_campaign=Network_en_all_lgen_inference_cloud&utm_term=crazyCoder)
+
+---
+
+**CRAZY CODER** is the hottest new way to write code! With the power of open-source AI models and the simplicity of natural language, you can go from idea to implementation in seconds.
+
+---
+
+## 🌟 Key Features
+
+### 🔥 **The Hottest Programming Language is English**
+Write your ideas, pseudo-code, or simple instructions in English, and let the AI do the rest. Forget syntax and debugging headaches—focus on what matters: your creativity.
+
+### ⚡ **Code Fast Now**
+No need to learn complex languages or frameworks. Get your program up and running in seconds using powerful open-source AI models like **Qwen**, **Llama**, **Mixtral**, and more.
+
+---
+
+## 🌐 Leverage Open Source
+
+- **Powerful Models**: Utilize cutting-edge coding models like **Qwen-2.5-Coder-32B**, which rivals GPT-4 in performance.
+- **Open for All**: These models are available to everyone for rapid prototyping and development.
+
+---
+
+## 🎨 Experiment Freely
+Harness the power of the **Nebius AI Studio** to experiment with different models at **low cost**. Create, test, and refine your applications in a flexible environment.
+
+🔗 Learn more about Nebius AI Studio [here](https://nebius.com/studio/inference?utm_medium=cpc&utm_source=crazyCoder&utm_campaign=Network_en_all_lgen_inference_cloud&utm_term=crazyCoder).
+
+---
+
+## 💡 Want to Replicate This App?
+The **CRAZY CODER** project is open source!
+You can clone the repository and deploy it easily to **Vercel** or your favorite platform.
+
+### 🚀 View the Code on GitHub
+- [Clone the repository](#) and start building today!
+
+---
+
+## ✨ Build Your Next Big Idea with CRAZY CODER!
+With **Nebius** and cutting-edge open-source models, the possibilities are endless. Start coding smarter, faster, and more creatively than ever before.
+
+---
+
+### 📜 License
+
+This project is licensed under the MIT License.
