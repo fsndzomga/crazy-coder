@@ -1,61 +1,32 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
-import "./globals.css";
+import './globals.css';
+import type { Metadata, Viewport } from 'next';
+import { Manrope } from 'next/font/google';
 import { Analytics } from "@vercel/analytics/react"
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
-
-
-const title = 'Crazy Coder';
-const description = 'An AI Coder Powered by Powerful Open Source Models';
-const url = 'https://www.code.lycee.ai';
-const ogimage = '/logo.png';
-const sitename = 'code.lycee.ai';
-
 export const metadata: Metadata = {
-  metadataBase: new URL(url),
-  title,
-  description,
-  icons: {
-    icon: '/favicon.ico',
-  },
-  openGraph: {
-    images: [ogimage],
-    title,
-    description,
-    url: url,
-    siteName: sitename,
-    locale: 'en_US',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    images: [ogimage],
-    title,
-    description,
-  },
+  title: 'Crazy Coder',
+  description: 'An AI Coder Powered by Powerful Open Source Models',
+  metadataBase: new URL('https://code.lycee.ai'),
 };
 
+export const viewport: Viewport = {
+  maximumScale: 1,
+};
+
+const manrope = Manrope({ subsets: ['latin'] });
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
+
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html
+      lang="en"
+      className={`bg-white dark:bg-gray-950 text-black dark:text-white ${manrope.className}`}
+    >
+      <body className="min-h-[100dvh] bg-gray-50">
         {children}
         <Analytics />
       </body>

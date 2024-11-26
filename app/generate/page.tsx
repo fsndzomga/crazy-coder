@@ -1,73 +1,88 @@
-// 'use client';
+'use client'
 
-// // import PromptForm from '@/components/promptForm';
-// import CodeDisplay from '@/components/codeDisplay';
-// // import { Toaster } from "@/components/ui/toaster";
-// // import { useCompletion } from 'ai/react';
-
-// // export default function GeneratePage() {
-// //   const { completion, complete } = useCompletion({
-// //     api: '/api/generate-code',
-// //   });
-
-// //   function getCode(prompt: string, language: string, model: string) {
-// //     complete(`Generate ${language} code for the following prompt: ${prompt}. Use model: ${model}`);
-// //   }
-
-// //   return (
-// //     <div className="flex flex-col h-screen bg-background">
-// //       <header className="p-4 border-b">
-// //         <h1 className="text-2xl font-bold">AI Code Generator</h1>
-// //       </header>
-// //       <div className="flex flex-1 overflow-hidden">
-// //         <div className="w-1/2 p-6 border-r overflow-auto">
-// //           <PromptForm onCompletionChange={getCode} />
-// //         </div>
-// //         <div className="w-1/2 p-6 overflow-hidden">
-// //           <CodeDisplay content={completion} />
-// //         </div>
-// //       </div>
-// //       <Toaster />
-// //     </div>
-// //   );
-// // }
-
-// import { useCompletion } from 'ai/react';
-
-// export default function Page() {
-//   const { completion, complete } = useCompletion({
-//     api: '/api/generate-code',
-//   });
-
-//   return (
-//     <div>
-//       <button
-//         onClick={async () => {
-//           await complete('Why is the sky blue?');
-//         }}
-//       >
-//         Generate
-//       </button>
-
-//       <div className="w-1/2 p-6 overflow-hidden">
-//         <CodeDisplay content={completion} />
-//       </div>
-//     </div>
-//   );
-// }
-
+import { useState } from 'react'
 import PromptForm from '@/components/promptForm'
 import CodeDisplay from '@/components/codeDisplay'
+import { Toaster } from "@/components/ui/toaster"
+import { Spinner } from "@/components/spinner"
+import Link from 'next/link';
+import { CircleIcon } from 'lucide-react';
 
-export default function Home() {
+function Header() {
   return (
-    <div className="flex h-screen bg-background">
-      <div className="w-1/2 p-6 border-r">
-        <PromptForm />
+    <header className="border-b border-gray-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+        <Link href="/" className="flex items-center">
+          <CircleIcon className="h-6 w-6 text-orange-500" />
+          <span className="ml-2 text-xl font-semibold text-gray-900">CRAZY CODER</span>
+        </Link>
+        <div className="flex items-center space-x-4">
+          <Link
+            href="https://nebius.com/studio/inference?utm_medium=cpc&utm_source=crazyCoder&utm_campaign=Network_en_all_lgen_inference_cloud&utm_term=crazyCoder"
+            className="text-sm font-medium text-gray-700 hover:text-gray-900"
+            target='_blank'
+          >
+            Built with ❤️ using Nebius
+          </Link>
+          <Link
+            href="https://x.com/ndzfs"
+            className="bg-black hover:bg-gray-800 text-white text-sm px-4 py-2 rounded-full"
+            target='_blank'
+          >
+            Follow me
+          </Link>
+        </div>
       </div>
-      <div className="w-1/2 p-6">
-        <CodeDisplay />
+    </header>
+  );
+}
+
+export default function GeneratePage() {
+  const [code, setCode] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
+
+  const handleSubmit = async (prompt: string, language: string, model: string) => {
+    setIsLoading(true)
+    try {
+      const response = await fetch('/api/generate-code', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ prompt, language, modelName: model }),
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to generate code')
+      }
+
+      const data = await response.json()
+      setCode(data.code)
+    } catch (error) {
+      console.error('Error generating code:', error)
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
+  return (
+    <>
+    <Header />
+    <div className="flex flex-col h-screen bg-background">
+      <div className="flex flex-1 overflow-hidden">
+        <div className="ml-[90px] w-1/2 p-6 border-r overflow-auto">
+          <PromptForm onSubmit={handleSubmit} isLoading={isLoading} />
+        </div>
+        <div className="w-1/2 p-6 flex items-center justify-center">
+          {isLoading ? (
+            <Spinner />
+          ) : (
+            <CodeDisplay code={code} />
+          )}
+        </div>
       </div>
+      <Toaster />
     </div>
+    </>
   )
 }
