@@ -17,9 +17,9 @@ export default function CodeDisplay({ code }: CodeDisplayProps) {
           rehypePlugins={[rehypeRaw]}
           remarkPlugins={[remarkGfm]}
           components={{
-            code({ node, inline, className, children, ...props }) {
+            code({ className, children, ...props }) {
               const match = /language-(\w+)/.exec(className || '')
-              return !inline && match ? (
+              return match ? (
                 <pre className={`p-4 rounded bg-muted ${className}`} style={{ overflowWrap: 'break-word', whiteSpace: 'pre-wrap' }}>
                   <code className={className} {...props}>
                     {children}

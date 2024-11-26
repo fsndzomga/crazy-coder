@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Copy, Check } from 'lucide-react';
+import Image from 'next/image';
 
 export function Terminal() {
   const [copied, setCopied] = useState(false);
@@ -47,10 +48,13 @@ export function Terminal() {
           </button>
         </div>
         <div className="space-y-2">
-          <img
+          <Image
             src="/agicode-vf.png"
             alt="Terminal Illustration"
-            className="w-full rounded-md"
+            className="rounded-md"
+            style={{ width: '100%', height: 'auto' }}
+            width={500}
+            height={300}
           />
         </div>
       </div>
