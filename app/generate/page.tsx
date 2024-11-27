@@ -10,8 +10,8 @@ import { CircleIcon } from 'lucide-react';
 
 function Header() {
   return (
-    <header className="border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+    <header className="border-b border-gray-200 flex flex-row md:flex-col">
+      <div className="max-w-7xl mx-auto md:mx-0 px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
         <Link href="/" className="flex items-center">
           <CircleIcon className="h-6 w-6 text-orange-500" />
           <span className="ml-2 text-xl font-semibold text-gray-900">CRAZY CODER</span>
@@ -19,7 +19,7 @@ function Header() {
         <div className="flex items-center space-x-4">
           <Link
             href="https://nebius.com/studio/inference?utm_medium=cpc&utm_source=crazyCoder&utm_campaign=Network_en_all_lgen_inference_cloud&utm_term=crazyCoder"
-            className="text-sm font-medium text-gray-700 hover:text-gray-900"
+            className="text-sm font-medium text-gray-700 hover:text-gray-900 invisible md:visible"
             target='_blank'
           >
             Built with ❤️ using Nebius
@@ -66,14 +66,14 @@ export default function GeneratePage() {
   }
 
   return (
-    <>
+    <div>
     <Header />
-    <div className="flex flex-col h-screen bg-background">
-      <div className="flex flex-1 overflow-hidden">
-        <div className="ml-[90px] w-1/2 p-6 border-r overflow-auto">
+    <div className="md:flex md:flex-col h-screen bg-background">
+      <div className="md:flex md:flex-1 overflow-hidden">
+        <div className="md:ml-[90px] ml-0 md:w-1/2 p-6 border-r overflow-auto">
           <PromptForm onSubmit={handleSubmit} isLoading={isLoading} />
         </div>
-        <div className="w-1/2 p-6 flex items-center justify-center">
+        <div className="md:w-1/2 p-6 flex items-center justify-center">
           {isLoading ? (
             <Spinner />
           ) : (
@@ -83,6 +83,6 @@ export default function GeneratePage() {
       </div>
       <Toaster />
     </div>
-    </>
+    </div>
   )
 }
