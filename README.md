@@ -1,7 +1,3 @@
-Here’s the updated **README** with the requested changes:
-
----
-
 # CRAZY CODER 🚀
 
 ![Demo of CRAZY CODER](public/opengraph-image.png)
